@@ -1,0 +1,459 @@
+/* =========================================================
+   UI Enhancement Layer - Cloud Based Bus Pass System
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700;900&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --primary:        #2563eb;
+  --primary-light:  #3b82f6;
+  --primary-dark:   #1d4ed8;
+  --accent:         #0ea5e9;
+  --surface:        #f8faff;
+  --text-main:      #1e293b;
+  --text-muted:     #64748b;
+  --border-color:   #e2e8f0;
+  --card-shadow:    0 4px 24px rgba(37,99,235,.10);
+  --card-hover-shadow: 0 12px 40px rgba(37,99,235,.18);
+  --radius:         14px;
+  --transition:     0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* ---------- Global Resets ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: var(--text-main);
+  background: #fff;
+  line-height: 1.7;
+}
+
+/* ---------- Navbar Overhaul ---------- */
+.site-navbar {
+  background: rgba(255,255,255,0.97) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 20px rgba(37,99,235,.07);
+  padding: 0 !important;
+  transition: box-shadow var(--transition);
+  position: sticky !important;
+  top: 0;
+  z-index: 1999;
+}
+
+.site-navbar .container { padding: 0 24px; }
+
+/* Logo */
+.site-navbar h1 a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem !important;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none !important;
+  letter-spacing: -0.5px;
+}
+
+/* Nav links */
+.site-navbar .site-navigation .site-menu > li > a {
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--text-main) !important;
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.site-navbar .site-navigation .site-menu > li > a:hover,
+.site-navbar .site-navigation .site-menu .active > a {
+  background: rgba(37,99,235,0.08);
+  color: var(--primary) !important;
+}
+
+.site-navbar .site-navigation .site-menu .active > a {
+  color: var(--primary) !important;
+}
+
+/* ---------- Hero Section ---------- */
+.site-blocks-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-blocks-cover.overlay::before {
+  background: linear-gradient(135deg, rgba(17,24,39,0.72) 0%, rgba(37,99,235,0.38) 100%) !important;
+}
+
+.site-blocks-cover h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 3.4rem !important;
+  letter-spacing: -1px;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.18);
+}
+
+.site-blocks-cover p {
+  font-size: 1.15rem !important;
+  color: rgba(255,255,255,0.78) !important;
+  font-weight: 300;
+}
+
+/* Hero CTA Button */
+.site-blocks-cover .btn.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 14px 40px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.35);
+  transition: transform var(--transition), box-shadow var(--transition) !important;
+  color: #fff !important;
+}
+
+.site-blocks-cover .btn.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(37,99,235,0.45) !important;
+  color: #fff !important;
+  border: none !important;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+}
+
+/* ---------- Section Headings ---------- */
+.site-section h2.font-weight-light,
+.site-section h2.text-black {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  letter-spacing: -0.5px;
+}
+
+.color-black-opacity-5 {
+  color: var(--text-muted) !important;
+  font-size: 1rem;
+}
+
+/* ---------- Destination Cards (.unit-1) ---------- */
+.unit-1 {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.unit-1:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.unit-1 img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.unit-1::after {
+  background: linear-gradient(to bottom, transparent 30%, rgba(15,23,42,0.88) 100%) !important;
+  border-radius: var(--radius) !important;
+}
+
+.unit-1 .unit-1-text {
+  padding: 0 16px 20px;
+}
+
+.unit-1 .unit-1-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem !important;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Destinations Section Background ---------- */
+.site-section {
+  background: #fff;
+}
+
+.site-section:nth-of-type(even) {
+  background: var(--surface);
+}
+
+/* ---------- Bus Details Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: none !important;
+}
+
+table th {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 18px !important;
+  border: none;
+}
+
+table td {
+  padding: 12px 18px !important;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.93rem;
+  background: #fff;
+  transition: background var(--transition);
+}
+
+table tr:last-child td { border-bottom: none; }
+table tr:hover td { background: rgba(37,99,235,0.04); }
+
+/* Stripe effect */
+table tbody tr:nth-child(even) td { background: #f0f6ff; }
+table tbody tr:nth-child(even):hover td { background: rgba(37,99,235,0.06); }
+
+/* ---------- Team Section Cards (about.html) ---------- */
+.col-md-6.col-lg-4.text-center.mb-5 {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px 20px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.col-md-6.col-lg-4.text-center.mb-5:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.col-md-6.col-lg-4.text-center.mb-5 img {
+  border: 4px solid rgba(37,99,235,0.2);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.14);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.col-md-6.col-lg-4.text-center.mb-5:hover img {
+  transform: scale(1.06);
+  border-color: var(--primary);
+}
+
+.col-md-6.col-lg-4.text-center.mb-5 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem !important;
+  color: var(--text-main) !important;
+  margin-top: 12px;
+}
+
+.col-md-6.col-lg-4.text-center.mb-5 p a span {
+  font-size: 1.3rem;
+  color: var(--primary);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.col-md-6.col-lg-4.text-center.mb-5 p a:hover span {
+  color: var(--accent);
+}
+
+/* ---------- General CTA Buttons ---------- */
+.btn.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  padding: 12px 34px !important;
+  box-shadow: 0 6px 20px rgba(37,99,235,0.28);
+  transition: transform var(--transition), box-shadow var(--transition) !important;
+  color: #fff !important;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(37,99,235,0.4) !important;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* ---------- CTA Banner Section ---------- */
+.site-section.border-top {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+  border-top: none !important;
+  border-radius: 0;
+}
+
+.site-section.border-top h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700 !important;
+  font-size: 2rem !important;
+  color: var(--primary-dark) !important;
+}
+
+/* ---------- Mid-page Banner ---------- */
+.site-blocks-cover.inner-page-cover {
+  border-radius: 0;
+}
+
+.site-blocks-cover.inner-page-cover::before {
+  background: linear-gradient(135deg, rgba(17,24,39,0.62) 0%, rgba(37,99,235,0.32) 100%) !important;
+}
+
+.site-blocks-cover.inner-page-cover h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: -0.5px;
+}
+
+/* ---------- About Page - Project Image ---------- */
+.site-section img.img-fluid.rounded {
+  border-radius: var(--radius) !important;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.site-section img.img-fluid.rounded:hover {
+  transform: scale(1.02);
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* ---------- Contact Page Info Box ---------- */
+.bg-white.p-4 {
+  border-radius: var(--radius) !important;
+  box-shadow: var(--card-shadow) !important;
+  border: 1px solid var(--border-color);
+}
+
+.bg-white.p-4 .font-weight-bold {
+  color: var(--primary) !important;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Footer Overhaul ---------- */
+.site-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  padding: 5em 0 2em !important;
+  border-top: 3px solid var(--primary);
+}
+
+.site-footer .footer-heading {
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 18px !important;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.site-footer .footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 32px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+}
+
+.site-footer p {
+  color: #94a3b8 !important;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.site-footer a {
+  color: #94a3b8 !important;
+  font-size: 0.92rem;
+  transition: color var(--transition), padding-left var(--transition);
+}
+
+.site-footer a:hover {
+  color: var(--accent) !important;
+  padding-left: 4px;
+}
+
+.site-footer ul li {
+  margin-bottom: 10px;
+  list-style: none;
+  position: relative;
+  padding-left: 14px;
+}
+
+.site-footer ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.site-footer .row.pt-5.mt-5 {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.site-footer .row.pt-5.mt-5 p {
+  font-size: 0.82rem;
+  color: #64748b !important;
+}
+
+/* ---------- Inner Page Header Breadcrumb ---------- */
+.site-blocks-cover a {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color var(--transition);
+}
+
+.site-blocks-cover a:hover { color: #fff; }
+
+/* ---------- Micro Animations ---------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.site-blocks-cover .col-md-12,
+.site-blocks-cover .col-md-8,
+.site-blocks-cover .col-md-7 {
+  animation: fadeInUp 0.85s ease both;
+}
+
+/* ---------- Background Color Refinement ---------- */
+.bg-light { background: var(--surface) !important; }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 768px) {
+  .site-blocks-cover h1 { font-size: 2rem !important; }
+  .site-blocks-cover.inner-page-cover h2 { font-size: 1.5rem !important; }
+  .col-md-6.col-lg-4.text-center.mb-5 { margin-bottom: 1rem !important; }
+}
