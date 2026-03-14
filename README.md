@@ -14,7 +14,6 @@ A web-based application that allows students to **book**, **manage**, **renew**,
 - [Installation & Setup](#installation--setup)
 - [Running the Project](#running-the-project)
 - [Pages Overview](#pages-overview)
-- [Team](#team)
 
 ---
 
@@ -64,7 +63,7 @@ In the traditional system, students had to physically visit an office on a speci
 Cloud-Based-Buss-Pass-System/
 │
 ├── index.html          # Home page — hero, stats bar, destinations
-├── about.html          # About page — project info & team
+├── about.html          # About page — company info & founder
 ├── contact.html        # Contact page — address & info
 ├── bus_details.html    # Bus route details & timings
 │
@@ -255,22 +254,11 @@ http://localhost:8080/Cloud-Based-Buss-Pass-System/index.html
 | Page               | URL                    | Description                            |
 |--------------------|------------------------|----------------------------------------|
 | Home               | `index.html`           | Landing page with hero & destinations  |
-| About              | `about.html`           | Project info & team members            |
+| About              | `about.html`           | Company info & founder                 |
 | Contact            | `contact.html`         | Contact info & university location     |
 | Bus Details        | `bus_details.html`     | Route timings for all destinations     |
 | Book Pass          | `book.php`             | Pass booking form                      |
 | Manage Pass        | `manage.php`           | Look up pass by ID + password          |
-
----
-
-## 👥 Team
-
-| Name           | Role        |
-|----------------|-------------|
-| Abhay Verma    | Team Member |
-| Som Sundar     | Team Member |
-| Pranjul Singhal| Team Member |
-| Rahul Hooda    | Team Member |
 
 ---
 
